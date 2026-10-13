@@ -18,55 +18,40 @@
     </header>
 
     <main>
-        <section>
-            <h2>Estructura del DOM: index.html (Página Principal)</h2>
+        <section class="dom-section">
+            <h2>Árbol DOM: index.html (Página Principal)</h2>
             <div class="tree">
                 <ul>
                     <li>
-                        <div class="node node-root">&lt;html&gt;</div>
+                        <span class="node node-doc">Document</span>
                         <ul>
                             <li>
-                                <div class="node">&lt;head&gt;</div>
-                                <ul>
-                                    <li><div class="node">&lt;meta charset="UTF-8"&gt;</div></li>
-                                    <li><div class="node">&lt;title&gt;</div></li>
-                                    <li><div class="node">&lt;link rel="stylesheet"&gt;</div></li>
-                                </ul>
-                            </li>
-                            <li>
-                                <div class="node">&lt;body&gt;</div>
+                                <span class="node node-root">&lt;html&gt;</span>
                                 <ul>
                                     <li>
-                                        <div class="node">&lt;header&gt;</div>
+                                        <span class="node">&lt;head&gt;</span>
                                         <ul>
-                                            <li><div class="node">&lt;h1&gt;</div></li>
-                                            <li><div class="node">&lt;p&gt;</div></li>
-                                            <li>
-                                                <div class="node">&lt;nav&gt;</div>
-                                                <ul>
-                                                    <li><div class="node">&lt;a&gt; (Inicio)</div></li>
-                                                    <li><div class="node">&lt;a&gt; (Galería)</div></li>
-                                                    <li><div class="node">&lt;a&gt; (Inspector)</div></li>
-                                                </ul>
-                                            </li>
+                                            <li><span class="node">&lt;meta&gt;</span></li>
+                                            <li><span class="node">&lt;title&gt;</span></li>
+                                            <li><span class="node">&lt;link&gt;</span></li>
                                         </ul>
                                     </li>
                                     <li>
-                                        <div class="node">&lt;main&gt;</div>
+                                        <span class="node">&lt;body&gt;</span>
                                         <ul>
                                             <li>
-                                                <div class="node">&lt;section&gt; (Teoría Canvas)</div>
+                                                <span class="node">&lt;header&gt;</span>
                                                 <ul>
-                                                    <li><div class="node">&lt;h2&gt;</div></li>
-                                                    <li><div class="node">&lt;p&gt;</div></li>
+                                                    <li><span class="node">&lt;h1&gt;</span></li>
+                                                    <li><span class="node">&lt;p&gt;</span></li>
+                                                    <li><span class="node">&lt;nav&gt;</span></li>
                                                 </ul>
                                             </li>
                                             <li>
-                                                <div class="node">&lt;section&gt; (Teoría p5.js)</div>
+                                                <span class="node">&lt;main&gt;</span>
                                                 <ul>
-                                                    <li><div class="node">&lt;h2&gt;</div></li>
-                                                    <li><div class="node">&lt;p&gt;</div></li>
-                                                    <li><div class="node">&lt;ul&gt; &gt; &lt;li&gt;</div></li>
+                                                    <li><span class="node">&lt;section&gt;</span></li>
+                                                    <li><span class="node">&lt;section&gt;</span></li>
                                                 </ul>
                                             </li>
                                         </ul>
@@ -79,51 +64,43 @@
             </div>
         </section>
 
-        <section>
-            <h2>Estructura del DOM: dibujos.html (Galería p5.js)</h2>
+        <section class="dom-section">
+            <h2>Árbol DOM: dibujos.html (Galería p5.js)</h2>
             <div class="tree">
                 <ul>
                     <li>
-                        <div class="node node-root">&lt;html&gt;</div>
+                        <span class="node node-doc">Document</span>
                         <ul>
                             <li>
-                                <div class="node">&lt;head&gt;</div>
-                                <ul>
-                                    <li><div class="node">&lt;meta charset="UTF-8"&gt;</div></li>
-                                    <li><div class="node">&lt;title&gt;</div></li>
-                                    <li><div class="node">&lt;link rel="stylesheet"&gt;</div></li>
-                                    <li><div class="node">&lt;script src="p5.js"&gt;</div></li>
-                                </ul>
-                            </li>
-                            <li>
-                                <div class="node">&lt;body&gt;</div>
+                                <span class="node node-root">&lt;html&gt;</span>
                                 <ul>
                                     <li>
-                                        <div class="node">&lt;header&gt;</div>
+                                        <span class="node">&lt;head&gt;</span>
                                         <ul>
-                                            <li><div class="node">&lt;h1&gt;</div></li>
-                                            <li><div class="node">&lt;p&gt;</div></li>
-                                            <li><div class="node">&lt;nav&gt;</div></li>
+                                            <li><span class="node">&lt;meta&gt;</span></li>
+                                            <li><span class="node">&lt;title&gt;</span></li>
+                                            <li><span class="node">&lt;script&gt;</span></li>
                                         </ul>
                                     </li>
                                     <li>
-                                        <div class="node">&lt;main&gt;</div>
+                                        <span class="node">&lt;body&gt;</span>
                                         <ul>
+                                            <li><span class="node">&lt;header&gt;</span></li>
                                             <li>
-                                                <div class="node">&lt;div class="botones-dibujos"&gt;</div>
+                                                <span class="node">&lt;main&gt;</span>
                                                 <ul>
-                                                    <li><div class="node">&lt;button&gt; (x5)</div></li>
+                                                    <li><span class="node">&lt;div&gt; (botones)</span></li>
+                                                    <li>
+                                                        <span class="node">&lt;div&gt; (container)</span>
+                                                        <ul>
+                                                            <li><span class="node node-canvas">&lt;canvas&gt;</span></li>
+                                                        </ul>
+                                                    </li>
                                                 </ul>
                                             </li>
-                                            <li>
-                                                <div class="node">&lt;div id="canvas-container"&gt;</div>
-                                                <ul>
-                                                    <li><div class="node node-highlight">&lt;canvas&gt; (Generado por p5.js)</div></li>
-                                                </ul>
-                                            </li>
+                                            <li><span class="node">&lt;script&gt;</span></li>
                                         </ul>
                                     </li>
-                                    <li><div class="node">&lt;script src="script.js"&gt;</div></li>
                                 </ul>
                             </li>
                         </ul>
