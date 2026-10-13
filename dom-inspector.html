@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inspección del Árbol DOM - Proyecto</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <h1>Inspección del Árbol DOM</h1>
+        <p>Representación jerárquica de la estructura de etiquetas del sitio web</p>
+        <nav>
+            <a href="index.html">Teoría e Inicio</a>
+            <a href="dibujos.html">Galería de Dibujos </a>
+            <a href="dom-inspector.html">Inspección DOM</a>
+        </nav>
+    </header>
+
+    <main>
+        <section>
+            <h2>Estructura del DOM: index.html (Página Principal)</h2>
+            <div class="tree">
+                <ul>
+                    <li>
+                        <div class="node node-root">&lt;html&gt;</div>
+                        <ul>
+                            <li>
+                                <div class="node">&lt;head&gt;</div>
+                                <ul>
+                                    <li><div class="node">&lt;meta charset="UTF-8"&gt;</div></li>
+                                    <li><div class="node">&lt;title&gt;</div></li>
+                                    <li><div class="node">&lt;link rel="stylesheet"&gt;</div></li>
+                                </ul>
+                            </li>
+                            <li>
+                                <div class="node">&lt;body&gt;</div>
+                                <ul>
+                                    <li>
+                                        <div class="node">&lt;header&gt;</div>
+                                        <ul>
+                                            <li><div class="node">&lt;h1&gt;</div></li>
+                                            <li><div class="node">&lt;p&gt;</div></li>
+                                            <li>
+                                                <div class="node">&lt;nav&gt;</div>
+                                                <ul>
+                                                    <li><div class="node">&lt;a&gt; (Inicio)</div></li>
+                                                    <li><div class="node">&lt;a&gt; (Galería)</div></li>
+                                                    <li><div class="node">&lt;a&gt; (Inspector)</div></li>
+                                                </ul>
+                                            </li>
+                                        </ul>
+                                    </li>
+                                    <li>
+                                        <div class="node">&lt;main&gt;</div>
+                                        <ul>
+                                            <li>
+                                                <div class="node">&lt;section&gt; (Teoría Canvas)</div>
+                                                <ul>
+                                                    <li><div class="node">&lt;h2&gt;</div></li>
+                                                    <li><div class="node">&lt;p&gt;</div></li>
+                                                </ul>
+                                            </li>
+                                            <li>
+                                                <div class="node">&lt;section&gt; (Teoría p5.js)</div>
+                                                <ul>
+                                                    <li><div class="node">&lt;h2&gt;</div></li>
+                                                    <li><div class="node">&lt;p&gt;</div></li>
+                                                    <li><div class="node">&lt;ul&gt; &gt; &lt;li&gt;</div></li>
+                                                </ul>
+                                            </li>
+                                        </ul>
+                                    </li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </section>
+
+        <section>
+            <h2>Estructura del DOM: dibujos.html (Galería p5.js)</h2>
+            <div class="tree">
+                <ul>
+                    <li>
+                        <div class="node node-root">&lt;html&gt;</div>
+                        <ul>
+                            <li>
+                                <div class="node">&lt;head&gt;</div>
+                                <ul>
+                                    <li><div class="node">&lt;meta charset="UTF-8"&gt;</div></li>
+                                    <li><div class="node">&lt;title&gt;</div></li>
+                                    <li><div class="node">&lt;link rel="stylesheet"&gt;</div></li>
+                                    <li><div class="node">&lt;script src="p5.js"&gt;</div></li>
+                                </ul>
+                            </li>
+                            <li>
+                                <div class="node">&lt;body&gt;</div>
+                                <ul>
+                                    <li>
+                                        <div class="node">&lt;header&gt;</div>
+                                        <ul>
+                                            <li><div class="node">&lt;h1&gt;</div></li>
+                                            <li><div class="node">&lt;p&gt;</div></li>
+                                            <li><div class="node">&lt;nav&gt;</div></li>
+                                        </ul>
+                                    </li>
+                                    <li>
+                                        <div class="node">&lt;main&gt;</div>
+                                        <ul>
+                                            <li>
+                                                <div class="node">&lt;div class="botones-dibujos"&gt;</div>
+                                                <ul>
+                                                    <li><div class="node">&lt;button&gt; (x5)</div></li>
+                                                </ul>
+                                            </li>
+                                            <li>
+                                                <div class="node">&lt;div id="canvas-container"&gt;</div>
+                                                <ul>
+                                                    <li><div class="node node-highlight">&lt;canvas&gt; (Generado por p5.js)</div></li>
+                                                </ul>
+                                            </li>
+                                        </ul>
+                                    </li>
+                                    <li><div class="node">&lt;script src="script.js"&gt;</div></li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </section>
+    </main>
+</body>
+</html>
