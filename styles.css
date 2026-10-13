@@ -99,50 +99,121 @@ canvas {
   color: #fff;
 }
 
-
-/* Estilos para la visualización del Árbol DOM */
-.tree {
-  margin-top: 1.5rem;
-  font-family: 'Courier New', Courier, monospace;
+/* --- ESTILOS DEL ÁRBOL DOM (DIAGRAMA JERÁRQUICO) --- */
+.dom-section {
+  width: 100%;
+  overflow-x: auto;
 }
 
-.tree ul {
-  padding-left: 20px;
+.tree-container {
+  display: flex;
+  justify-content: center;
+  padding: 20px 0;
+  overflow-x: auto;
+}
+
+.tree-diagram ul {
+  padding-top: 20px; 
+  position: relative;
+  transition: all 0.5s;
+  display: flex;
+  justify-content: center;
+  margin: 0;
+  padding-left: 0;
+  list-style-type: none;
+}
+
+.tree-diagram li {
+  float: left; 
+  text-align: center;
   list-style-type: none;
   position: relative;
+  padding: 20px 5px 0 5px;
+  transition: all 0.5s;
 }
 
-.tree ul ul {
-  border-left: 2px dashed #38bdf8;
-  margin-left: 10px;
-  padding-left: 15px;
+/* Dibujo de líneas horizontales y verticales */
+.tree-diagram li::before, .tree-diagram li::after {
+  content: '';
+  position: absolute; 
+  top: 0; 
+  right: 50%;
+  border-top: 2px solid #38bdf8;
+  width: 50%; 
+  height: 20px;
 }
 
-.tree li {
-  margin: 8px 0;
-  position: relative;
+.tree-diagram li::after {
+  right: auto; 
+  left: 50%;
+  border-left: 2px solid #38bdf8;
 }
 
-.node {
-  display: inline-block;
-  background-color: #0f172a;
-  color: #38bdf8;
-  border: 1px solid #38bdf8;
-  padding: 6px 12px;
-  border-radius: 6px;
-  font-size: 0.9rem;
+.tree-diagram li:only-child::after, .tree-diagram li:only-child::before {
+  display: none;
+}
+
+.tree-diagram li:only-child { 
+  padding-top: 0;
+}
+
+.tree-diagram li:first-child::before, .tree-diagram li:last-child::after {
+  border: 0 none;
+}
+
+.tree-diagram li:last-child::before {
+  border-right: 2px solid #38bdf8;
+  border-radius: 0 5px 0 0;
+}
+
+.tree-diagram li:first-child::after {
+  border-radius: 5px 0 0 0;
+}
+
+.tree-diagram ul ul::before {
+  content: '';
+  position: absolute; 
+  top: 0; 
+  left: 50%;
+  border-left: 2px solid #38bdf8;
+  width: 0; 
+  height: 20px;
+}
+
+/* Estilos de los Nodos / Cajitas */
+.tree-diagram .node {
+  border: 2px solid #38bdf8;
+  padding: 8px 14px;
+  text-decoration: none;
+  color: #f8fafc;
+  font-family: monospace;
+  font-size: 0.85rem;
   font-weight: bold;
-  box-shadow: 0 2px 4px rgba(0,0,0,0.3);
+  background-color: #0f172a;
+  display: inline-block;
+  border-radius: 6px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.5);
+  transition: all 0.3s;
 }
 
-.node-root {
+.tree-diagram .node-doc {
+  background-color: #2563eb;
+  border-color: #60a5fa;
+  color: #fff;
+}
+
+.tree-diagram .node-root {
   background-color: #0284c7;
-  color: #ffffff;
   border-color: #38bdf8;
 }
 
-.node-highlight {
-  background-color: #15803d;
-  color: #ffffff;
-  border-color: #22c55e;
+.tree-diagram .node-canvas {
+  background-color: #16a34a;
+  border-color: #4ade80;
+}
+
+.tree-diagram .node:hover {
+  background-color: #38bdf8;
+  color: #0f172a;
+  transform: scale(1.05);
 }
