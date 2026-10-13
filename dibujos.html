@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Galería de Dibujos - p5.js</title>
+    <link rel="stylesheet" href="styles.css">
+    <!-- Cargamos la librería p5.js -->
+    <script src="p5.js"></script>
+</head>
+<body>
+    <header>
+        <h1>Galería de Prácticas Gráficas</h1>
+        <p>Selecciona un dibujo para visualizarlo en el lienzo</p>
+        <nav>
+            <a href="index.html">Teoría e Inicio</a>
+            <a href="dibujos.html">Galería de Dibujos (p5.js)</a>
+        </nav>
+    </header>
+
+    <main>
+        <div class="botones-dibujos">
+            <button onclick="cambiarDibujo('rana')">1. Rana</button>
+            <button onclick="cambiarDibujo('conejo')">2. Dientes de Conejo</button>
+            <button onclick="cambiarDibujo('cena')">3. ¿Qué hay de cena?</button>
+            <button onclick="cambiarDibujo('nevado')">4. Día Nevado Soleado</button>
+            <button onclick="cambiarDibujo('muñeco')">5. Muñeco de Nieve</button>
+        </div>
+
+        <div id="canvas-container" class="canvas-box">
+            <!-- El canvas de p5.js se insertará aquí dinámicamente -->
+        </div>
+    </main>
+
+    <!-- Cargamos el script con la lógica de los dibujos -->
+    <script src="script.js"></script>
+</body>
+</html>

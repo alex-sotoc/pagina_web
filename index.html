@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Práctica de Gráficos - Inicio</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <h1>Despliegue de Gráficos por Computadora</h1>
+        <p>Instituto Tecnológico - Programación Web y Gráfica</p>
+        <nav>
+            <a href="index.html">Teoría e Inicio</a>
+            <a href="dibujos.html">Galería de Dibujos (p5.js)</a>
+        </nav>
+    </header>
+
+    <main>
+        <section>
+            <h2>Introducción a la Etiqueta &lt;canvas&gt; y Contextos 2D</h2>
+            <p>La etiqueta HTML <code>&lt;canvas&gt;</code> es un contenedor gráfico introducido en HTML5 que permite renderizar gráficos dinámicos, dibujos 2D y animaciones directamente en el navegador utilizando secuencias de comandos (por lo general JavaScript).</p>
+            <p>Para poder dibujar en un canvas, es necesario obtener su <strong>contexto de renderizado</strong> mediante JavaScript utilizando el método <code>canvas.getContext('2d')</code>. Este contexto proporciona propiedades y funciones para trazar líneas, figuras geométricas, rectángulos, círculos, gestionar colores y manipular imágenes píxel a píxel.</p>
+        </section>
+
+        <section>
+            <h2>Fundamentos de la Librería p5.js</h2>
+            <p><strong>p5.js</strong> es una biblioteca de JavaScript basada en los principios de Processing, diseñada específicamente para hacer la programación creativa accesible a artistas, diseñadores, educadores y principiantes.</p>
+            <p>Simplifica enormemente el trabajo directo con el contexto 2D del canvas nativo mediante una estructura limpia basada en funciones principales:</p>
+            <ul>
+                <li><strong><code>setup()</code></strong>: Se ejecuta una sola vez al iniciar el programa. Ideal para inicializar configuraciones y crear el lienzo con <code>createCanvas()</code>.</li>
+                <li><strong><code>draw()</code></strong>: Se ejecuta de forma continua (o una sola vez si se usa <code>noLoop()</code>), permitiendo renderizar formas primitivas como <code>ellipse()</code>, <code>rect()</code>, <code>triangle()</code> y <code>line()</code> con gran facilidad y control de estilos de color (<code>fill()</code> y <code>stroke()</code>).</li>
+            </ul>
+        </section>
+    </main>
+</body>
+</html>
