@@ -1,14 +1,22 @@
 let dibujoActual = 'rana'; // Inicia mostrando la rana por defecto
 
+// Variables globales para las animaciones
+let sunSize = 30;
+let leftX = 150;
+let rightX = 250;
+let sunRadius = 100;
+let xPos = 50;
+let yPos = 50;
+let xPos2 = 350;
+let yPos2 = 100;
+
 function setup() {
   let cnv = createCanvas(400, 400);
   cnv.parent("canvas-container");
-  noLoop(); // Renderizado estático optimizado
+  actualizarModoLoop();
 }
 
 function draw() {
-  background(240); // Fondo neutro por defecto
-
   if (dibujoActual === 'rana') {
     dibujarRana();
   } else if (dibujoActual === 'conejo') {
@@ -19,13 +27,44 @@ function draw() {
     dibujarNevado();
   } else if (dibujoActual === 'muñeco') {
     dibujarMuñeco();
+  } else if (dibujoActual === 'solExplota') {
+    animarSolExplota();
+  } else if (dibujoActual === 'nubesSeparan') {
+    animarNubesSeparan();
+  } else if (dibujoActual === 'estrellaFugaz') {
+    animarEstrellaFugaz();
   }
 }
 
-// Función para cambiar de dibujo mediante los botones
+// Función para cambiar de dibujo o animación mediante los botones
 function cambiarDibujo(nombre) {
   dibujoActual = nombre;
-  redraw(); // Vuelve a ejecutar draw() para actualizar el lienzo
+  
+  // Reiniciar valores de animación si se seleccionan
+  if (nombre === 'solExplota') {
+    sunSize = 30;
+  } else if (nombre === 'nubesSeparan') {
+    leftX = 150;
+    rightX = 250;
+    sunRadius = 100;
+  } else if (nombre === 'estrellaFugaz') {
+    xPos = 50;
+    yPos = 50;
+    xPos2 = 350;
+    yPos2 = 100;
+  }
+
+  actualizarModoLoop();
+}
+
+// Controla si p5.js corre de forma continua (animación) o estática
+function actualizarModoLoop() {
+  if (['solExplota', 'nubesSeparan', 'estrellaFugaz'].includes(dibujoActual)) {
+    loop(); // Activa el bucle continuo para animaciones
+  } else {
+    noLoop(); // Renderizado estático para dibujos fijos
+    redraw();
+  }
 }
 
 // --- 1. RANA ---
@@ -125,4 +164,57 @@ function dibujarMuñeco() {
   ellipse(200, 120, 75, 75);
   line(160, 200, 100, 150); // brazos
   line(240, 200, 300, 150);
+}
+
+// --- 6. EL SOL QUE EXPLOTA ---
+function animarSolExplota() {
+  noStroke();
+  background(82, 222, 240);
+  
+  sunSize = sunSize + 1;
+  fill(255, 204, 0);
+  ellipse(200, 298, sunSize, sunSize);
+  
+  fill(76, 168, 67);
+  rect(0, 300, 400, 100);
+}
+
+// --- 7. NUBES QUE SE SEPARAN ---
+function animarNubesSeparan() {
+  noStroke();
+  background(184, 236, 255);
+  
+  leftX -= 1;
+  rightX += 1;
+  sunRadius += 2;
+  
+  fill(255, 170, 0);
+  ellipse(200, 100, sunRadius, sunRadius);
+  
+  fill(255, 255, 255);
+  // Nube izquierda
+  ellipse(leftX, 150, 126, 97);
+  ellipse(leftX + 62, 150, 70, 60);
+  ellipse(leftX - 62, 150, 70, 60);
+  
+  // Nube derecha
+  ellipse(rightX, 100, 126, 97);
+  ellipse(rightX + 62, 100, 70, 60);
+  ellipse(rightX - 62, 100, 70, 60);
+}
+
+// --- 8. ESTRELLA FUGAZ ---
+function animarEstrellaFugaz() {
+  background(29, 40, 115);
+  
+  xPos += 2;
+  yPos += 3;
+  xPos2 -= 1.5;
+  yPos2 += 2;
+  
+  fill(255, 242, 0);
+  ellipse(xPos, yPos, 10, 10);
+  
+  fill(200, 220, 255);
+  ellipse(xPos2, yPos2, 6, 6);
 }
